@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <iostream>
 
-#include "../include/final_project_internship/main_window.hpp"
+#include "../include/final_project_internship/laptop/main_window.hpp"
 
 int main(int argc, char* argv[])
 {

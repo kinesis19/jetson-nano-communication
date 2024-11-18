@@ -1,4 +1,4 @@
-#include "../include/final_project_internship/main_window.hpp"
+#include "../include/final_project_internship/laptop/main_window.hpp"
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindowDesign)
 {
@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
   this->setWindowIcon(icon);
 
   qnode = new QNode();
+
+  // connect(ui->btnSendToJetson, )
 
   QObject::connect(qnode, SIGNAL(rosShutDown()), this, SLOT(close()));
 }

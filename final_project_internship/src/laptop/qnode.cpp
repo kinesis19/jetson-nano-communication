@@ -1,4 +1,4 @@
-#include "../include/final_project_internship/qnode.hpp"
+#include "../include/final_project_internship/laptop/qnode.hpp"
 
 QNode::QNode()
 {
