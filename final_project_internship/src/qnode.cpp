@@ -1,15 +1,3 @@
-/**
- * @file /src/qnode.cpp
- *
- * @brief Ros communication central!
- *
- * @date August 2024
- **/
-
-/*****************************************************************************
-** Includes
-*****************************************************************************/
-
 #include "../include/final_project_internship/qnode.hpp"
 
 QNode::QNode()
