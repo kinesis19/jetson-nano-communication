@@ -27,7 +27,7 @@ file(GLOB PRO_INCLUDE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  include/
 file(GLOB PRO_RESOURCE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  resource/*.qrc)
 qt5_wrap_ui(QT_UI_HPP ${PRO_UI_DIR})
 qt5_wrap_cpp(QT_MOC_HPP ${PRO_INCLUDE_DIR})
-qt5_add_resources(QT_RESOUCE_HPP ${PRO_RESOURCE_DIR})
+qt5_add_resources(QT_RESOUCES_HPP ${PRO_RESOURCE_DIR})
 include_directories(
 	include/
 	${CMAKE_CURRENT_BINARY_DIR}
@@ -37,7 +37,7 @@ add_executable(${PROJECT_NAME}
     ${PRO_INCLUDE_DIR}
     ${PRO_UI_DIR}
     ${QT_MOC_HPP}
-    ${QT_RESOUCE_HPP}
+    ${QT_RESOUCES_HPP}
     ${QT_UI_HPP} 
   )
 ament_target_dependencies(${PROJECT_NAME} rclcpp  Boost )
