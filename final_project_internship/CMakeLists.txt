@@ -21,17 +21,21 @@ find_package(
   REQUIRED
 )
 
-file(GLOB PRO_SOURCE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  src/*.cpp)
+file(GLOB PRO_SOURCE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  src/laptop/*.cpp src/jetson/*.cpp)
 file(GLOB PRO_UI_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  ui/*.ui)
-file(GLOB PRO_INCLUDE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  include/${PROJECT_NAME}/*.h include/${PROJECT_NAME}/*.hpp)
+file(GLOB PRO_INCLUDE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  include/${PROJECT_NAME}/*.h include/${PROJECT_NAME}/laptop/*.hpp include/${PROJECT_NAME}/jetson/*.hpp)
 file(GLOB PRO_RESOURCE_DIR RELATIVE ${CMAKE_SOURCE_DIR} FOLLOW_SYMLINKS  resource/*.qrc)
 qt5_wrap_ui(QT_UI_HPP ${PRO_UI_DIR})
 qt5_wrap_cpp(QT_MOC_HPP ${PRO_INCLUDE_DIR})
 qt5_add_resources(QT_RESOUCES_HPP ${PRO_RESOURCE_DIR})
 include_directories(
-	include/
-	${CMAKE_CURRENT_BINARY_DIR}
+    include/
+    include/${PROJECT_NAME}  # include/final_project_internship
+    include/${PROJECT_NAME}/jetson  # include/final_project_internship/jetson
+    include/${PROJECT_NAME}/laptop  # include/final_project_internship/laptop
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
+
 add_executable(${PROJECT_NAME}
     ${PRO_SOURCE_DIR}
     ${PRO_INCLUDE_DIR}
